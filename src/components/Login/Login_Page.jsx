@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import './Login_Page.css';
+import React, { useState, useEffect} from 'react';
+import styles from './Login_Page.module.css';
+
 
 const sliderImages = [
   'images/image_1.png',
   'images/image_2.png',
   'images/image_3.png',
 ];
+ 
 
-const Login_page = () => {
+const LoginPage = () => {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const [currentSlide, setCurrentSlide] = useState(0);
-
+    
+  //! we will use useNavigate to redirect to another page && useRef to get input value ...!
+ 
   // handleInputChange function
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -25,7 +29,7 @@ const Login_page = () => {
     e.preventDefault();
 
     const { email, password } = credentials;
-    const alertMessage =
+     const alertMessage =
       email === '' && password === ''
         ? 'Please Enter Your Email and Password'
         : email === ''
@@ -37,7 +41,7 @@ const Login_page = () => {
     alert(alertMessage);
   
     console.log('Login attempt with:', credentials);
-    setCredentials({ email: '', password: '' });
+    setCredentials({ email: '', password: '' }); 
   };
   
   useEffect(() => {
@@ -49,23 +53,23 @@ const Login_page = () => {
   }, []);
 
   return (
-    <div className="login-slider-container">
-      <div className="image-slider">
+    <div className={styles['login-slider-container']}>
+      <div className={styles['image-slider']}>
         {sliderImages.map((src, index) => (
           <img
             key={index}
             src={src}
             alt={`Slide ${index}`}
-            className={`slide ${index === currentSlide ? 'active' : ''}`}
+            className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
           />
         ))}
       </div>
-      <div className="login-container">
-        <div className="logo">
+      <div className={styles['login-container']}>
+        <div className={styles.logo}>
         </div>
         <h2>Welcome To Madrasty</h2>
-        <form onSubmit={handleSubmit} className="login-form">
-          <div className="form-group">
+        <form onSubmit={handleSubmit} className={styles['login-form']}>
+          <div className={styles['form-group']}>
             <label htmlFor="email">Login</label>
             <input
               id="email"
@@ -73,10 +77,11 @@ const Login_page = () => {
               name="email"
               placeholder="Enter email or national ID"
               value={credentials.email}
-              onChange={handleInputChange}
+              onChange={handleInputChange} 
+             /*  ref={idRef} */
             />
           </div>
-          <div className="form-group">
+          <div className={styles['form-group']}>
             <label htmlFor="password">Password</label>
             <input
               id="password"
@@ -85,11 +90,12 @@ const Login_page = () => {
               placeholder="Enter password"
               value={credentials.password}
               onChange={handleInputChange}
+              /* ref={passwordRef} */
             />
           </div>
-          <div className="form-footer">
+          <div className={styles['form-footer']}>
             <a href="/forgot-password">Forgot password?</a>
-            <button type="submit" className="login-button">
+            <button type="submit" className={styles['login-button']}>
               Login
             </button>
           </div>
@@ -99,4 +105,4 @@ const Login_page = () => {
   );
 };
 
-export default Login_page;
+export default LoginPage ;
