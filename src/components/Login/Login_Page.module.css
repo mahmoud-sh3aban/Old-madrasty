@@ -40,7 +40,7 @@
   padding: 4.78rem; 
   width: 100%;
   max-width: 31.25rem; 
-  box-shadow: 0 1.5625rem 3.90625rem rgba(0, 0, 0, 0.2);
+  box-shadow: transparent;
   text-align: center;
 }
 
