@@ -6,23 +6,13 @@
   font-size: 16px;
 }
 
-@media (max-width: 767.98px) {
-  .image-slider {
-    display: none;
-  }
-
-  .image-slider{
-    height: 33.3125rem;
-  }
-}
-
 .login-slider-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
-
+  
 }
 
 .image-slider {
@@ -110,23 +100,37 @@ h2 {
   background-color: #0056b3;
 }
 
+
+
+/*---------------------------  all  Media Queries  ------------------------------------- */
+@media (max-width: 767.98px) {
+  .image-slider {
+    display: none;
+  }
+
+  .image-slider{
+    height: 33.3125rem;
+  }
+}
+
+/* handWatch media query */
 @media (max-width: 336px) {
   .login-container {
     padding: 1.5rem;
   }
-
+  
   h2 {
     font-size: 1.125rem;
   }
-
+  
   .form-group label {
     font-size: 0.8125rem;
   }
-
+  
   .form-group input {
     padding: 0.625rem;
   }
-
+  
   .login-button {
     padding: 0.625rem;
     font-size: 0.875rem;
