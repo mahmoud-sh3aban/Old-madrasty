@@ -10,10 +10,10 @@ const sliderImages = [
  
 
 const LoginPage = () => {
+ 
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const [currentSlide, setCurrentSlide] = useState(0);
-    
-  //! we will use useNavigate to redirect to another page && useRef to get input value ...!
+ 
  
   // handleInputChange function
   const handleInputChange = (e) => {

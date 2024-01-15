@@ -8,9 +8,9 @@ function App() {
         <Router>
         <LoginPage/>
         <br></br>
-          <ResetPassword/>
+      {/*     <ResetPassword/> */}
           <br></br>
-          <OTPVerification/>
+          {/* <OTPVerification/> */}
           <Routes>
             {/* <Route path="/reset-password" element={ <ResetPassword/>}/>
             <Route path="/otp-verification" element={ <OTPVerification/>}/> */}
