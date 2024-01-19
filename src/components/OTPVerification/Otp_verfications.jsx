@@ -33,7 +33,7 @@ const OTPVerification = () => {
     <div className={styles['otp-container']}>
       <div className={styles['otp-card']}>
         <h2>Code Verification</h2>
-        <p>Enter your 6 digits code that you received<br></br> on your email.</p>
+        <p>Enter your 6 digits code that you received on your email.</p>
         <form onSubmit={handleSubmit} className={styles['otp-form']}>
           <div className={styles['otp-inputs']}>
             {otp.map((data, index) => {
